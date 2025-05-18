@@ -2,7 +2,7 @@
 <view class="user-bg">
   <!-- 顶部logo栏 -->
   <view class="user-header">
-    <image src="../../images/figures/问农AI.png" class="user-header-logo" />
+    <image src="https://i.postimg.cc/Z5Wfybn4/AI.png" class="user-header-logo" />
     <view class="user-header-icons">
       <image src="../../images/icons/ellipsis.png" class="user-header-icon" />
       <image src="../../images/icons/circle.png" class="user-header-icon" />
@@ -10,7 +10,7 @@
   </view>
   <!-- 背景大图（圆角矩形） -->
   <view class="user-main-bg-wrap">
-    <image src="../../images/figures/background.png" class="user-main-bg" mode="aspectFill" />
+    <image src="https://i.postimg.cc/gJFBWCYd/background.png" class="user-main-bg" mode="aspectFill" />
   </view>
   <!-- 头像昵称卡片，悬浮在背景图下方 -->
   <view class="user-card user-info-card">

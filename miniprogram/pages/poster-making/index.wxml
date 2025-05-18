@@ -1,7 +1,7 @@
 <view class="poster-bg">
   <!-- 顶部logo栏 -->
   <view class="poster-header">
-    <image src="../../images/figures/问农AI.png" class="poster-header-logo" />
+    <image src="https://i.postimg.cc/Z5Wfybn4/AI.png" class="poster-header-logo" />
     <view class="poster-header-icons">
       <image src="../../images/icons/ellipsis.png" class="poster-header-icon" />
     </view>

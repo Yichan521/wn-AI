@@ -1,7 +1,7 @@
 <!--pages/writting/index.wxml-->
   <!-- 顶部自定义栏 -->
 <view class="wnai-header">
-  <image src="../../images/figures/问农AI.png" class="wnai-header-logo" />
+  <image src="https://i.postimg.cc/Z5Wfybn4/AI.png" class="wnai-header-logo" />
 
 </view>
 <view class="writting-bg">

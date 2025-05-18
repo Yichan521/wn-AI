@@ -1,7 +1,7 @@
 <view class="video-bg">
   <!-- 顶部logo栏 -->
   <view class="video-header">
-    <image src="../../images/figures/问农AI.png" class="video-header-logo" />
+    <image src="https://i.postimg.cc/Z5Wfybn4/AI.png" class="video-header-logo" />
     <view class="video-header-icons">
       <image src="../../images/icons/ellipsis.png" class="video-header-icon" />
     </view>
