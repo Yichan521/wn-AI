@@ -184,3 +184,24 @@
   padding: 20rpx 0;
   box-shadow: none;
 }
+.writting-result-container {
+  position: relative;
+  width: 100%;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  background: rgba(58, 175, 79, 0.1);
+  color: #3aaf4f;
+  font-size: 24rpx;
+  padding: 8rpx 24rpx;
+  border-radius: 24rpx;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.copy-btn:active {
+  background: rgba(58, 175, 79, 0.2);
+}

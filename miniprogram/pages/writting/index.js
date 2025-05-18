@@ -117,7 +117,23 @@ Page({
     });
   },
 
+  // ... existing code ...
   toVideo() {
     wx.showToast({ title: "跳转为视频功能", icon: "none" });
+  },
+
+  copyResult() {
+    if (this.data.result) {
+      wx.setClipboardData({
+        data: this.data.result,
+        success: () => {
+          wx.showToast({
+            title: "复制成功",
+            icon: "success",
+            duration: 2000,
+          });
+        },
+      });
+    }
   },
 });

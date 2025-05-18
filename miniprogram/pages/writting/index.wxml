@@ -59,7 +59,10 @@
     </view>
     <button class="writting-gen-btn" bindtap="generateCopy">生成智能文案</button>
     <view class="writting-form-row">
-      <view class="writting-result">{{result}}</view>
+      <view class="writting-result-container">
+        <view class="writting-result">{{result}}</view>
+        <view class="copy-btn" bindtap="copyResult" wx:if="{{result}}">复制</view>
+      </view>
     </view>
     <button class="writting-video-btn" bindtap="toVideo">转换为视频</button>
   </view>
