@@ -1,0 +1,39 @@
+<view class="poster-bg">
+  <!-- 顶部logo栏 -->
+  <view class="poster-header">
+    <image src="../../images/figures/问农AI.png" class="poster-header-logo" />
+    <view class="poster-header-icons">
+      <image src="../../images/icons/ellipsis.png" class="poster-header-icon" />
+    </view>
+  </view>
+  <!-- 标题栏 -->
+  <view class="poster-title-bar">
+    <text class="poster-title">海报创作</text>
+  </view>
+  <!-- 表单区 -->
+  <view class="poster-card">
+    <view class="poster-form-row">
+      <view class="poster-label">产品名称</view>
+      <input class="poster-input" placeholder="" data-field="productName" value="{{productName}}" bindinput="onInput" />
+      <view class="poster-label">海报标题</view>
+      <input class="poster-input" placeholder="" data-field="posterTitle" value="{{posterTitle}}" bindinput="onInput" />
+    </view>
+    <view class="poster-form-row">
+      <textarea class="poster-textarea" placeholder="输入你的内容" data-field="content" value="{{content}}" bindinput="onInput" />
+    </view>
+    <view class="poster-form-row">
+      <view class="poster-label">海报风格</view>
+      <input class="poster-input" placeholder="" data-field="style" value="{{style}}" bindinput="onInput" />
+    </view>
+    <view class="poster-form-row">
+      <textarea class="poster-result" placeholder="生成的海报" value="{{result}}" disabled />
+    </view>
+  </view>
+  <!-- 底部操作区 -->
+  <view class="poster-btn-row">
+    <button class="poster-gen-btn" bindtap="generatePoster">生成海报</button>
+    <button class="poster-download-btn" bindtap="downloadPoster">下载海报</button>
+  </view>
+  <!-- 底部导航栏占位 -->
+  <view style="height: 100rpx;"></view>
+</view> 

@@ -1,0 +1,133 @@
+.poster-bg {
+  min-height: 100vh;
+  background: #d2e7c6;
+  position: relative;
+  padding-bottom: 32rpx;
+}
+.poster-header {
+  width: 100vw;
+  height: 8vh;
+  min-height: 80rpx;
+  max-height: 100rpx;
+  background: #6bbf59;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.poster-header-logo {
+  height: 50rpx;
+  width: 150rpx;
+}
+.poster-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.poster-header-icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+.poster-title-bar {
+  width: 100vw;
+  height: 7vh;
+  min-height: 60rpx;
+  max-height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 32rpx;
+  box-sizing: border-box;
+}
+.poster-title {
+  font-size: 32rpx;
+  color: #3aaf4f;
+  font-weight: bold;
+}
+.poster-card {
+  background: #fff;
+  border-radius: 24rpx;
+  margin: 24rpx 24rpx 0 24rpx;
+  padding: 24rpx;
+  box-shadow: 0 4rpx 16rpx #b6e2b6;
+}
+.poster-form-row {
+  margin-bottom: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.poster-label {
+  font-size: 26rpx;
+  color: #333;
+  margin-right: 16rpx;
+  min-width: 120rpx;
+}
+.poster-input {
+  flex: 1;
+  background: #f7faf7;
+  border-radius: 16rpx;
+  border: none;
+  padding: 16rpx 20rpx;
+  font-size: 28rpx;
+  color: #222;
+  margin-right: 16rpx;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+.poster-input::placeholder {
+  color: #bdbdbd;
+}
+.poster-textarea {
+  width: 100%;
+  min-height: 120rpx;
+  background: #f7faf7;
+  border-radius: 16rpx;
+  border: none;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+  color: #222;
+  box-sizing: border-box;
+}
+.poster-result {
+  width: 100%;
+  min-height: 100rpx;
+  background: #f7faf7;
+  border-radius: 16rpx;
+  border: none;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+  color: #222;
+  box-sizing: border-box;
+}
+.poster-btn-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 32rpx 24rpx 0 24rpx;
+}
+.poster-gen-btn {
+  flex: 1;
+  background: linear-gradient(90deg, #3aaf4f, #7be495);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 32rpx;
+  padding: 24rpx 0;
+  border: none;
+  box-shadow: 0 4rpx 16rpx #b6e2b6;
+  margin-right: 16rpx;
+}
+.poster-download-btn {
+  flex: 1;
+  background: #fff;
+  color: #3aaf4f;
+  border: 2rpx solid #3aaf4f;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 32rpx;
+  padding: 24rpx 0;
+  box-shadow: none;
+  margin-left: 16rpx;
+}

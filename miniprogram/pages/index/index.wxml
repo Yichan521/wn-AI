@@ -1,0 +1,41 @@
+<view class="wnai-container">
+  <view class="wnai-header">
+    <image src="../../images/figures/问农AI.png" class="wnai-header-logo" />
+
+    <view class="wnai-header-icons">
+      <image src="../../images/icons/ellipsis.png" class="wnai-header-icon" />
+      <image src="../../images/icons/circle.png" class="wnai-header-icon" />
+    </view>
+  </view>
+  <!-- 主图 -->
+  <view class="wnai-main-img-wrap">
+    <image src="../../images/figures/card1.png" class="wnai-main-img" mode="aspectFill" />
+  </view>
+  <!-- 功能卡片区 -->
+  <view class="wnai-cards">
+    <view class="wnai-card wnai-card-active">
+      <image src="../../images/figures/card1.png" class="wnai-card-img" mode="aspectFill" />
+      <view class="wnai-card-content">
+        <view class="wnai-card-title">智能文案生成</view>
+        <view class="wnai-card-desc">基于产品信息自动生成营销方案</view>
+        <button class="wnai-card-btn" bindtap="onCard1Tap">了解更多</button>
+      </view>
+    </view>
+    <view class="wnai-card">
+      <image src="../../images/figures/card2.png" class="wnai-card-img" mode="aspectFill" />
+      <view class="wnai-card-content">
+        <view class="wnai-card-title">数字人视频制作</view>
+        <view class="wnai-card-desc">一键生成产品介绍和带货视频</view>
+        <button class="wnai-card-btn" bindtap="onCard2Tap">了     解     更     多</button>
+      </view>
+    </view>
+    <view class="wnai-card">
+      <image src="../../images/figures/card3.png" class="wnai-card-img" mode="aspectFill" />
+      <view class="wnai-card-content">
+        <view class="wnai-card-title">AI营销海报设计</view>
+        <view class="wnai-card-desc">自动生成符合产品特色的营销海报</view>
+        <button class="wnai-card-btn" bindtap="onCard3Tap">了     解     更     多</button>
+      </view>
+    </view>
+  </view>
+</view>

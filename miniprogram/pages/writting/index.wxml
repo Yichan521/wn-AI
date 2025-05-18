@@ -1,0 +1,66 @@
+<!--pages/writting/index.wxml-->
+  <!-- 顶部自定义栏 -->
+<view class="wnai-header">
+  <image src="../../images/figures/问农AI.png" class="wnai-header-logo" />
+
+</view>
+<view class="writting-bg">
+  <view class="writting-header">
+  </view>
+  <view class="writting-tab-bar">
+    <view class="writting-tab {{tabIndex==0?'active':''}}" data-index="0" bindtap="switchTab">产品介绍文案</view>
+    <view class="writting-tab {{tabIndex==1?'active':''}}" data-index="1" bindtap="switchTab">社交媒体带货文案</view>
+  </view>
+  <view class="writting-card">
+    <view wx:if="{{tabIndex==0}}">
+      <view class="writting-form-row">
+        <view class="horizontal-row">
+          <view>
+            <view class="writting-label">产品名</view>
+            <input class="writting-input" placeholder="输入你的内容" data-field="productName" value="{{productName}}" bindinput="onInput"/>
+          </view>
+          <view>
+            <view class="writting-label">产地</view>
+            <input class="writting-input" placeholder="输入你的内容" data-field="productOrigin" value="{{productOrigin}}" bindinput="onInput"/>
+          </view>
+        </view>
+      </view>
+      <view class="writting-form-row">
+        <view class="writting-label">产品特色/优势</view>
+        <input class="writting-input" placeholder="输入你的内容" data-field="productFeature" value="{{productFeature}}" bindinput="onInput"/>
+      </view>
+      <view class="writting-form-row">
+        <view class="writting-upload-btn" bindtap="chooseImage">
+          <block wx:if="{{productImage}}">
+            <image src="{{productImage}}" class="writting-upload-img"/>
+          </block>
+          <block wx:else>
+            <view class="writting-upload-plus">+</view>
+            <view class="writting-upload-text">上传产品图（可选）</view>
+          </block>
+        </view>
+      </view>
+      <view class="writting-form-row">
+        <view class="writting-label">产品描述</view>
+        <textarea class="writting-textarea" placeholder="输入你的内容" data-field="productDesc" value="{{productDesc}}" bindinput="onInput"/>
+      </view>
+    </view>
+    <view wx:elif="{{tabIndex==1}}">
+      <view class="writting-form-row">
+        <view class="writting-label">产品名</view>
+        <input class="writting-input" placeholder="输入你的内容" data-field="productName" value="{{productName}}" bindinput="onInput"/>
+        <view class="writting-label">产地</view>
+        <input class="writting-input" placeholder="输入你的内容" data-field="productOrigin" value="{{productOrigin}}" bindinput="onInput"/>
+      </view>
+      <view class="writting-form-row">
+        <view class="writting-label">产品卖点</view>
+        <textarea class="writting-textarea" placeholder="输入你的内容" data-field="productSellingPoint" value="{{productSellingPoint}}" bindinput="onInput"/>
+      </view>
+    </view>
+    <button class="writting-gen-btn" bindtap="generateCopy">生成智能文案</button>
+    <view class="writting-form-row">
+      <view class="writting-result">{{result}}</view>
+    </view>
+    <button class="writting-video-btn" bindtap="toVideo">转换为视频</button>
+  </view>
+</view>
