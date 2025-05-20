@@ -1,11 +1,19 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,send_from_directory
 import requests
+import os
+from datetime import datetime
 from flask_cors import CORS
+from dotenv import load_dotenv
+#jimeng-api类调用
+from JimengEngineAPIClient import VolcEngineAPIClient
+
+# 加载环境变量
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-OPENAI_API_KEY = "sk-yrfyifpostwalqtxoxbgxeripvvrfxrnwubpifyrlbibzfwy"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 MODEL = "deepseek-ai/DeepSeek-V3"
 SYSTEM_PROMPT = """
 你是“文案大师”，一位拥有超过20年经验的顶尖营销专家和广告文案撰稿人。你的专长在于洞察产品核心价值，并将其转化为能够触动人心、激发购买欲望的文字。你深谙消费者心理，擅长运用各种修辞手法和叙事技巧，为不同类型的产品量身打造专属的爆款文案。
@@ -81,6 +89,76 @@ def gen_social_copy():
     else:
         print(f"[ERROR] OpenAI API调用失败: 状态码={resp.status_code}, 响应={resp.text}")
         return jsonify({"result": "生成失败，请稍后重试"}), 500
+"""
+===============================================================================================================
+海报部分
+"""
+# 配置海报保存目录
+app.config['UPLOAD_FOLDER'] = 'uploads'
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
+# 初始化 jimeng-api
+jimeng_ak = os.getenv("JIMENG_AK")
+jimeng_sk = os.getenv("JIMENG_SK")
+volc_engine_client = VolcEngineAPIClient(jimeng_ak, jimeng_sk)
+
+#海报生成调用
+@app.route('/generate_poster', methods=['POST'])
+def generate_poster():
+    try:
+        # 获取前端传递的参数
+        data = request.json
+        if not data:
+            return jsonify({"status": 400, "message": "Invalid request data"}), 400
+
+        prompt = data.get('prompt')
+
+        # 构造请求参数
+        query_params = {
+            'Action': 'CVProcess',
+            'Version': '2022-08-31',
+        }
+
+        body_params = {
+            "req_key": "jimeng_high_aes_general_v21_L",
+            "prompt": prompt
+        }
+
+        # 调用 VolcEngineAPIClient 发送请求
+        response = volc_engine_client.send_request(query_params, body_params)
+
+        # 假设 response 是一个 base64 编码的字符串
+        if not response:
+            return jsonify({"status": 500, "message": "Failed to generate image"}), 500
+
+        # 动态生成文件名
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"output_image_{timestamp}"
+
+        # 调用 base64_to_image 方法保存图片
+        saved_path = volc_engine_client.base64_to_image(app.config['UPLOAD_FOLDER'], filename)
+
+        if not saved_path:
+            return jsonify({"status": 500, "message": "Failed to save image"}), 500
+
+        # 生成图片 URL
+        image_url = f"/uploads/{os.path.basename(saved_path)}"
+
+        # 返回结果
+        return jsonify({
+            "status": 200,
+            "result": image_url  # 返回图片的 URL
+        })
+
+    except Exception as e:
+        return jsonify({"status": 500, "message": "Internal Server Error", "error": str(e)}), 500
+
+#图片读取
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+"""
+================================================================================================================
+"""
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000) 
